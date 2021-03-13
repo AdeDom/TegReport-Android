@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.adedom.tegreport.R
 import com.adedom.tegreport.models.Data
@@ -36,6 +37,13 @@ class SubFinalAdapter : RecyclerView.Adapter<SubFinalAdapter.SubFinalViewHolder>
             val item = list[position]
 
             tvBranchTotalScore.text = "รวมคะแนน ${item.branchTotalScore}"
+
+            val mAdapter = BranchFinalAdapter()
+            recyclerView.apply {
+                layoutManager = LinearLayoutManager(this.context)
+                adapter = mAdapter
+            }
+            mAdapter.submitList(item.subData)
         }
     }
 
