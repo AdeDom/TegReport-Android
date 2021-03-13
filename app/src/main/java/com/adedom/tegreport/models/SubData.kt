@@ -1,6 +1,7 @@
 package com.adedom.tegreport.models
 
 data class SubData(
+    val subDataId: Int? = null,
     val date: String? = null,
     val time: String? = null,
     val itemA: Int? = null,

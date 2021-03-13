@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.adedom.tegreport.R
 import com.adedom.tegreport.models.Final
@@ -38,6 +39,13 @@ class FinalAdapter : RecyclerView.Adapter<FinalAdapter.FinalViewHolder>() {
             tvName.text = item.name
             tvTotalDate.text = "รวม ${item.totalDate} วัน"
             tvSubTotalScore.text = "รวมคะแนน ${item.subTotalScore}"
+
+            val mAdapter = SubFinalAdapter()
+            recyclerView.apply {
+                layoutManager = LinearLayoutManager(this.context)
+                adapter = mAdapter
+            }
+            mAdapter.submitList(item.data)
         }
     }
 
