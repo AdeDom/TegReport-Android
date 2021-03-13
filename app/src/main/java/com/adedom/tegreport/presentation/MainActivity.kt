@@ -5,6 +5,7 @@ import android.os.Bundle
 import com.adedom.tegreport.R
 import com.adedom.tegreport.base.BaseActivity
 import com.adedom.tegreport.data.TegApi
+import com.adedom.tegreport.presentation.testfinal.FinalActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
