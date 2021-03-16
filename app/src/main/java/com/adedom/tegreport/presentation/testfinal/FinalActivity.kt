@@ -48,11 +48,13 @@ class FinalActivity : BaseActivity() {
             fab.isVisible = true
 
             val dateHeadAdapter = DateHeaderAdapter()
+            val columnHeaderAdapter = ColumnHeaderAdapter()
             val finalAdapter = FinalAdapter()
             val resultFooterAdapter = ResultFooterAdapter()
 
             val adt = ConcatAdapter(
                 dateHeadAdapter,
+                columnHeaderAdapter,
                 finalAdapter,
                 resultFooterAdapter,
             )
