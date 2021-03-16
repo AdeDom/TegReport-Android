@@ -1,21 +1,19 @@
 package com.adedom.tegreport.data
 
 import com.adedom.tegreport.BuildConfig
-import com.adedom.tegreport.models.FinalResponse
 import com.facebook.stetho.okhttp3.StethoInterceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create
-import retrofit2.http.GET
 import java.util.concurrent.TimeUnit
 
 // https://run.mocky.io/v3/112d2604-6123-4c22-b389-16aacba0a45f
 interface FinalApi {
 
-    @GET("v3/112d2604-6123-4c22-b389-16aacba0a45f")
-    suspend fun callFetchFinal(): FinalResponse
+//    @GET("v3/112d2604-6123-4c22-b389-16aacba0a45f")
+//    suspend fun callFetchFinal(): FinalResponse
 
     companion object {
         operator fun invoke(): FinalApi {

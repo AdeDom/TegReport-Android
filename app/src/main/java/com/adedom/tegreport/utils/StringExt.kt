@@ -1,3 +1,3 @@
 package com.adedom.tegreport.utils
 
-fun Int.tegFormat() = String.format("%,d", this)
+fun Int?.tegFormat() = String.format("%,d", this)

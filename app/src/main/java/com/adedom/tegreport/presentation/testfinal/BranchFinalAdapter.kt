@@ -1,9 +1,10 @@
 package com.adedom.tegreport.presentation.testfinal
 
 import android.view.View
+import com.adedom.teg.models.report.testfinal.SubData
 import com.adedom.tegreport.R
-import com.adedom.tegreport.models.SubData
 import com.adedom.tegreport.utils.SimpleRecyclerView
+import com.adedom.tegreport.utils.tegFormat
 import kotlinx.android.synthetic.main.item_branch_final.view.*
 
 class BranchFinalAdapter : SimpleRecyclerView<SubData>() {
@@ -20,8 +21,8 @@ class BranchFinalAdapter : SimpleRecyclerView<SubData>() {
         tvItemA.text = currentData.itemA.toString()
         tvItemB.text = currentData.itemB.toString()
         tvItemC.text = currentData.itemC.toString()
-        tvItemD.text = currentData.itemD.toString()
-        tvTotalScore.text = currentData.totalScore.toString()
+        tvItemD.text = currentData.itemD.tegFormat()
+        tvTotalScore.text = currentData.totalScore.tegFormat()
     }
 
     override fun getAreItemsTheSame(oldItem: SubData, newItem: SubData): Boolean {

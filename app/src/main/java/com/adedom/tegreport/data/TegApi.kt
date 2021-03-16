@@ -1,6 +1,7 @@
 package com.adedom.tegreport.data
 
 import com.adedom.teg.models.report.*
+import com.adedom.teg.models.report.testfinal.FinalResponse
 import com.adedom.teg.util.TegConstant
 import com.adedom.tegreport.BuildConfig
 import com.facebook.stetho.okhttp3.StethoInterceptor
@@ -10,6 +11,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create
 import retrofit2.http.GET
+import retrofit2.http.Query
 import java.util.concurrent.TimeUnit
 
 interface TegApi {
@@ -37,6 +39,12 @@ interface TegApi {
 
     @GET("api/report/single-item")
     suspend fun callFetchSingleItem(): SingleItemResponse
+
+    @GET("api/report/test-final/pantip")
+    suspend fun callFetchTestFinalPantip(
+        @Query("begin") begin: Long?,
+        @Query("end") end: Long?,
+    ): FinalResponse
 
     companion object {
         operator fun invoke(): TegApi {
