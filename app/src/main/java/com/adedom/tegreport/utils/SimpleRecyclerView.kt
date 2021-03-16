@@ -81,6 +81,40 @@ abstract class SimpleRecyclerView<T : Any> :
 
 }
 
+abstract class ItemRecyclerView<T : Any> :
+    RecyclerView.Adapter<ItemRecyclerView<T>.ItemViewHolder>() {
+
+     private var data: T? = null
+
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): ItemRecyclerView<T>.ItemViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(getLayout(), parent, false)
+        return ItemViewHolder(view)
+    }
+
+    override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
+        holder.itemView.onBindViewHolder()
+    }
+
+    override fun getItemCount(): Int = 1
+
+    @LayoutRes
+    abstract fun getLayout(): Int
+
+    abstract fun View.onBindViewHolder()
+
+    fun setData(data: T) {
+        this.data = data
+    }
+
+    fun getData() = data
+
+    inner class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
+
+}
+
 fun <T : Any> RecyclerView.submitList(
     adt: SimpleRecyclerView<T>,
     data: List<T>,
