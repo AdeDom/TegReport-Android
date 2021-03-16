@@ -7,6 +7,7 @@
 
     <TextView
         android:id="@+id/tvPlayerId"
+        style="@style/Text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
@@ -16,6 +17,7 @@
 
     <TextView
         android:id="@+id/tvName"
+        style="@style/Text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
@@ -36,6 +38,7 @@
 
     <TextView
         android:id="@+id/tvTotalDate"
+        style="@style/Text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
@@ -45,6 +48,7 @@
 
     <TextView
         android:id="@+id/tvSubTotalScore"
+        style="@style/Text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"

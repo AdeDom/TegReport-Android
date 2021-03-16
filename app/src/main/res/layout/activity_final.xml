@@ -7,6 +7,16 @@
     android:padding="8dp"
     tools:context=".presentation.testfinal.FinalActivity">
 
+    <TextView
+        android:id="@+id/tvDateBeginAndEnd"
+        style="@style/Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="ตั้งแต่วันที่ 1/1/64 ถึงวันที่ 2/1/64"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
@@ -14,11 +24,12 @@
         android:overScrollMode="never"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDateBeginAndEnd"
         tools:listitem="@layout/item_final" />
 
     <TextView
         android:id="@+id/tvGrandTotalPeople"
+        style="@style/Text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toStartOf="@+id/tvGrandTotalScore"
@@ -27,6 +38,7 @@
 
     <TextView
         android:id="@+id/tvGrandTotalScore"
+        style="@style/Text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,5 +63,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="32dp"
+        android:src="@drawable/ic_search"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

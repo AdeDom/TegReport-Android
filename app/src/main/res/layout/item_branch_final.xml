@@ -6,6 +6,7 @@
 
     <TextView
         android:id="@+id/tvDate"
+        style="@style/Text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
@@ -16,6 +17,7 @@
 
     <TextView
         android:id="@+id/tvTime"
+        style="@style/Text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
@@ -26,6 +28,7 @@
 
     <TextView
         android:id="@+id/tvItemA"
+        style="@style/Text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
@@ -36,6 +39,7 @@
 
     <TextView
         android:id="@+id/tvItemB"
+        style="@style/Text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
@@ -46,6 +50,7 @@
 
     <TextView
         android:id="@+id/tvItemC"
+        style="@style/Text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
@@ -56,6 +61,7 @@
 
     <TextView
         android:id="@+id/tvItemD"
+        style="@style/Text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
@@ -66,6 +72,7 @@
 
     <TextView
         android:id="@+id/tvTotalScore"
+        style="@style/Text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
