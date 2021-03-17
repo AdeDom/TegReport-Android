@@ -11,6 +11,7 @@ import com.adedom.tegreport.base.BaseActivity
 import com.adedom.tegreport.data.TegApi
 import com.google.android.material.datepicker.MaterialDatePicker
 import kotlinx.android.synthetic.main.activity_final.*
+import kotlinx.android.synthetic.main.toolbar.*
 import kotlinx.coroutines.launch
 import java.util.*
 
@@ -19,6 +20,10 @@ class FinalActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_final)
+
+        val title = intent.getStringExtra("report")
+        toolbar.title = title
+        setSupportActionBar(toolbar)
 
         val dateRangePicker = MaterialDatePicker.Builder.dateRangePicker().apply {
             setSelection(Pair(Date().time, Date().time))
