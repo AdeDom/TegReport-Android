@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:columnCount="9"
+    android:rowCount="1">
+
+    <TextView
+        android:id="@+id/tvPlayerId"
+        style="@style/Text"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:gravity="center"
+        android:text="รหัสผู้เล่น"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvName"
+        style="@style/Text"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:gravity="center"
+        android:text="ชื่อผู้เล่น"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvImage"
+        style="@style/Text"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:gravity="center"
+        android:text="รูปภาพ"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvGender"
+        style="@style/Text"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:gravity="center"
+        android:text="เพศ"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvBirthDate"
+        style="@style/Text"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:gravity="center"
+        android:text="วันเกิด"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvState"
+        style="@style/Text"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="สถานะการใช้งาน"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvCurrentMode"
+        style="@style/Text"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:gravity="center"
+        android:text="โหมดผู้เล่น"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvDateTimeCreated"
+        style="@style/Text"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:gravity="center"
+        android:text="วันที่สมัคร"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvLevel"
+        style="@style/Text"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:gravity="center"
+        android:text="เลเวล"
+        android:textStyle="bold" />
+
+</GridLayout>

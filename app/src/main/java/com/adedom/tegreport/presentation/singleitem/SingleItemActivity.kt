@@ -1,11 +1,11 @@
 package com.adedom.tegreport.presentation.singleitem
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import com.adedom.tegreport.R
+import com.adedom.tegreport.base.BaseActivity
 import kotlinx.android.synthetic.main.toolbar.*
 
-class SingleItemActivity : AppCompatActivity() {
+class SingleItemActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

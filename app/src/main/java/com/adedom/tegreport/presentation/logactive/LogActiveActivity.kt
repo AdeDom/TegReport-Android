@@ -1,11 +1,11 @@
 package com.adedom.tegreport.presentation.logactive
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import com.adedom.tegreport.R
+import com.adedom.tegreport.base.BaseActivity
 import kotlinx.android.synthetic.main.toolbar.*
 
-class LogActiveActivity : AppCompatActivity() {
+class LogActiveActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

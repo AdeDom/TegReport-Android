@@ -1,11 +1,11 @@
 package com.adedom.tegreport.presentation.multiitem
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import com.adedom.tegreport.R
+import com.adedom.tegreport.base.BaseActivity
 import kotlinx.android.synthetic.main.toolbar.*
 
-class MultiItemActivity : AppCompatActivity() {
+class MultiItemActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

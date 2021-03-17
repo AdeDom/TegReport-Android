@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    android:padding="4dp"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="8dp">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="9"
+        android:rowCount="1">
+
+        <TextView
+            android:id="@+id/tvPlayerId"
+            style="@style/Text"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:singleLine="true"
+            android:text="b45c83c074f141bd869e5d9ee6f9a3c1" />
+
+        <TextView
+            android:id="@+id/tvName"
+            style="@style/Text"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:singleLine="true"
+            android:text="teg1" />
+
+        <ImageView
+            android:id="@+id/ivImage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:src="@drawable/ic_image_profile" />
+
+        <RelativeLayout
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="4dp">
+
+            <ImageView
+                android:id="@+id/icGender"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:src="@drawable/ic_male" />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/tvBirthDate"
+            style="@style/Text"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:singleLine="true"
+            android:text="30/10/1994" />
+
+        <RelativeLayout
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="4dp">
+
+            <ImageView
+                android:id="@+id/ivState"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:src="@drawable/shape_oval_green" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tvCurrentMode"
+            style="@style/Text"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_margin="4dp"
+            android:singleLine="true"
+            android:text="Main" />
+
+        <TextView
+            android:id="@+id/tvDateTimeCreated"
+            style="@style/Text"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:singleLine="true"
+            android:text="18/10/2020" />
+
+        <TextView
+            android:id="@+id/tvLevel"
+            style="@style/Text"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_margin="4dp"
+            android:singleLine="true"
+            android:text="14" />
+
+    </GridLayout>
+
+</androidx.cardview.widget.CardView>
