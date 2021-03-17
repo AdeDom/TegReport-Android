@@ -8,71 +8,78 @@
     <TextView
         android:id="@+id/tvDate"
         style="@style/Text"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_columnWeight="1"
         android:layout_margin="4dp"
         android:gravity="center"
+        android:singleLine="true"
         android:text="1/1/64" />
 
     <TextView
         android:id="@+id/tvTime"
         style="@style/Text"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_columnWeight="1"
         android:layout_margin="4dp"
         android:gravity="center"
+        android:singleLine="true"
         android:text="8:00" />
 
     <TextView
         android:id="@+id/tvItemA"
         style="@style/Text"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_columnWeight="1"
         android:layout_margin="4dp"
         android:gravity="center"
+        android:singleLine="true"
         android:text="5" />
 
     <TextView
         android:id="@+id/tvItemB"
         style="@style/Text"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_columnWeight="1"
         android:layout_margin="4dp"
         android:gravity="center"
+        android:singleLine="true"
         android:text="4" />
 
     <TextView
         android:id="@+id/tvItemC"
         style="@style/Text"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_columnWeight="1"
         android:layout_margin="4dp"
         android:gravity="center"
+        android:singleLine="true"
         android:text="0" />
 
     <TextView
         android:id="@+id/tvItemD"
         style="@style/Text"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_columnWeight="1"
         android:layout_margin="4dp"
         android:gravity="center"
+        android:singleLine="true"
         android:text="12" />
 
     <TextView
         android:id="@+id/tvTotalScore"
         style="@style/Text"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_columnWeight="1"
         android:layout_margin="4dp"
         android:gravity="center"
+        android:singleLine="true"
         android:text="21" />
 
 </GridLayout>

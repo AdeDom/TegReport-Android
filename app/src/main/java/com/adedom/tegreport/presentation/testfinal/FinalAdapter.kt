@@ -13,7 +13,7 @@ class FinalAdapter : SimpleRecyclerView<Final>() {
     override fun getLayout(): Int = R.layout.item_final
 
     override fun View.onBindViewHolder(currentData: Final, beforeData: Final?) {
-        tvPlayerId.text = currentData.playerId?.substring(27, 32)
+        tvPlayerId.text = currentData.playerId
         tvName.text = currentData.name
         tvTotalDate.text = "รวม ${currentData.totalDate} วัน"
         tvSubTotalScore.text = "รวมคะแนน ${currentData.subTotalScore.tegFormat()}"

@@ -5,40 +5,27 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent=".11" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent=".22" />
-
     <TextView
         android:id="@+id/tvPlayerId"
         style="@style/Text"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
+        android:singleLine="true"
         android:text="P01"
-        app:layout_constraintEnd_toStartOf="@+id/guideline1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvName"
         style="@style/Text"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
+        android:singleLine="true"
         android:text="Mr.A"
-        app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintStart_toEndOf="@+id/guideline1"
+        app:layout_constraintEnd_toStartOf="@+id/recyclerView"
+        app:layout_constraintStart_toEndOf="@+id/tvPlayerId"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -48,7 +35,7 @@
         android:layout_margin="4dp"
         android:overScrollMode="never"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/guideline2"
+        app:layout_constraintStart_toEndOf="@+id/tvName"
         app:layout_constraintTop_toTopOf="parent"
         tools:listitem="@layout/item_sub_final" />
 
