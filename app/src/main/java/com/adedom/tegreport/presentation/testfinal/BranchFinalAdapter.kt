@@ -16,6 +16,10 @@ class BranchFinalAdapter : SimpleRecyclerView<SubData>() {
             tvDate.visibility = View.INVISIBLE
         }
 
+        if (currentData.time == beforeData?.time) {
+            tvTime.visibility = View.INVISIBLE
+        }
+
         tvDate.text = currentData.date
         tvTime.text = currentData.time
         tvItemA.text = currentData.itemA.toString()
