@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:columnCount="5"
+    android:rowCount="1">
+
+    <TextView
+        android:id="@+id/tvDateIn"
+        style="@style/Text"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:layout_margin="4dp"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="1/1/21" />
+
+    <TextView
+        android:id="@+id/tvTimeIn"
+        style="@style/Text"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:layout_margin="4dp"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="6:10" />
+
+    <TextView
+        android:id="@+id/tvDateOut"
+        style="@style/Text"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:layout_margin="4dp"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="1/1/21" />
+
+    <TextView
+        android:id="@+id/tvTimeOut"
+        style="@style/Text"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:layout_margin="4dp"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="8:20" />
+
+    <TextView
+        android:id="@+id/tvTimePeriod"
+        style="@style/Text"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:layout_margin="4dp"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="2:10" />
+
+</GridLayout>
