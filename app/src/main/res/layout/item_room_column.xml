@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:columnCount="6"
+    android:rowCount="1">
+
+    <TextView
+        android:id="@+id/tvRoomId"
+        style="@style/Text"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:text="รหัสห้อง"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvRoomNo"
+        style="@style/Text"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:text="หมายเลขห้อง"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvRoomName"
+        style="@style/Text"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:text="ชื่อห้อง"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvPeople"
+        style="@style/Text"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:text="จำนวนคน/ห้อง"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvStatus"
+        style="@style/Text"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:text="สถานะห้อง"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvDateTime"
+        style="@style/Text"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:text="เวลาสร้าง"
+        android:textStyle="bold" />
+
+</GridLayout>

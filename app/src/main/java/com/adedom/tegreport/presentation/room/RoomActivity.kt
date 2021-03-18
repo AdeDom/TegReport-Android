@@ -14,6 +14,7 @@ import kotlinx.coroutines.launch
 class RoomActivity : BaseActivity() {
 
     private lateinit var mRoomAdapter: RoomAdapter
+    private lateinit var mRoomFooterAdapter: RoomFooterAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,10 +24,14 @@ class RoomActivity : BaseActivity() {
         toolbar.title = title
         setSupportActionBar(toolbar)
 
+        val roomColumnAdapter = RoomColumnAdapter()
         mRoomAdapter = RoomAdapter()
+        mRoomFooterAdapter = RoomFooterAdapter()
 
         val adt = ConcatAdapter(
+            roomColumnAdapter,
             mRoomAdapter,
+            mRoomFooterAdapter,
         )
 
         recyclerView.apply {
@@ -49,6 +54,7 @@ class RoomActivity : BaseActivity() {
             recyclerView.isVisible = true
 
             mRoomAdapter.submitList(response.rooms)
+            mRoomFooterAdapter.setData(response)
         }
     }
 
