@@ -2,6 +2,7 @@ package com.adedom.tegreport.data
 
 import com.adedom.teg.models.report.*
 import com.adedom.teg.models.report.testfinal.FinalResponse
+import com.adedom.teg.models.report.two.LogActiveHistoryResponse
 import com.adedom.teg.util.TegConstant
 import com.adedom.tegreport.BuildConfig
 import com.facebook.stetho.okhttp3.StethoInterceptor
@@ -45,6 +46,9 @@ interface TegApi {
         @Query("begin") begin: Int? = 1,
         @Query("end") end: Int? = 99,
     ): GamePlayerRankingsResponse
+
+    @GET("api/report/log-active-history/filter")
+    suspend fun callFetchLogActiveHistory(): LogActiveHistoryResponse
 
     @GET("api/report/test-final/pantip")
     suspend fun callFetchTestFinalPantip(

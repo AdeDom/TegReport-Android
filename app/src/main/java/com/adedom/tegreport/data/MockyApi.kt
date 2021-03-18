@@ -1,7 +1,6 @@
 package com.adedom.tegreport.data
 
 import com.adedom.tegreport.BuildConfig
-import com.adedom.tegreport.models.LogActiveResponse
 import com.adedom.tegreport.models.RoomResponse
 import com.facebook.stetho.okhttp3.StethoInterceptor
 import okhttp3.OkHttpClient
@@ -17,8 +16,8 @@ interface MockyApi {
 //    @GET("v3/ee0eeb62-c018-4ca1-8ae9-44770e35e51a")
 //    suspend fun callFetchPlayer(): PlayerResponse
 
-    @GET("v3/516adf03-c488-4c55-b19d-0e0e254014e9")
-    suspend fun callFetchLogActive(): LogActiveResponse
+//    @GET("v3/516adf03-c488-4c55-b19d-0e0e254014e9")
+//    suspend fun callFetchLogActive(): LogActiveHistoryResponse
 
     @GET("v3/d9d720d8-befd-4211-9d07-50e6da6f8419")
     suspend fun callFetchRooms(): RoomResponse

@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.adedom.tegreport.R
 import com.adedom.tegreport.base.BaseActivity
-import com.adedom.tegreport.data.MockyApi
+import com.adedom.tegreport.data.TegApi
 import kotlinx.android.synthetic.main.activity_log_active.*
 import kotlinx.android.synthetic.main.toolbar.*
 import kotlinx.coroutines.launch
@@ -48,12 +48,12 @@ class LogActiveActivity : BaseActivity() {
             progressBar.isVisible = true
             recyclerView.isVisible = false
 
-            val response = MockyApi().callFetchLogActive()
+            val response = TegApi().callFetchLogActiveHistory()
 
             progressBar.isVisible = false
             recyclerView.isVisible = true
 
-            mLogActiveAdapter.submitList(response.logActives)
+            mLogActiveAdapter.submitList(response.logActiveHistories)
             mLogActiveFooterAdapter.setData(response)
         }
     }

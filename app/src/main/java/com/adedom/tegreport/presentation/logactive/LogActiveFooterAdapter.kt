@@ -1,12 +1,12 @@
 package com.adedom.tegreport.presentation.logactive
 
 import android.view.View
+import com.adedom.teg.models.report.two.LogActiveHistoryResponse
 import com.adedom.tegreport.R
-import com.adedom.tegreport.models.LogActiveResponse
 import com.adedom.tegreport.utils.ItemRecyclerView
 import kotlinx.android.synthetic.main.item_log_active_footer.view.*
 
-class LogActiveFooterAdapter : ItemRecyclerView<LogActiveResponse>() {
+class LogActiveFooterAdapter : ItemRecyclerView<LogActiveHistoryResponse>() {
 
     override fun getLayout(): Int = R.layout.item_log_active_footer
 
