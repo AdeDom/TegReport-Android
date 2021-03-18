@@ -2,15 +2,19 @@ package com.adedom.tegreport.presentation.logactive
 
 import android.os.Bundle
 import androidx.core.view.isVisible
+import androidx.recyclerview.widget.ConcatAdapter
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.adedom.tegreport.R
 import com.adedom.tegreport.base.BaseActivity
 import com.adedom.tegreport.data.MockyApi
-import com.adedom.tegreport.utils.submitList
 import kotlinx.android.synthetic.main.activity_log_active.*
 import kotlinx.android.synthetic.main.toolbar.*
 import kotlinx.coroutines.launch
 
 class LogActiveActivity : BaseActivity() {
+
+    private lateinit var mLogActiveAdapter: LogActiveAdapter
+    private lateinit var mLogActiveFooterAdapter: LogActiveFooterAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,6 +23,21 @@ class LogActiveActivity : BaseActivity() {
         val title = intent.getStringExtra("report")
         toolbar.title = title
         setSupportActionBar(toolbar)
+
+        val logActiveColumnAdapter = LogActiveColumnAdapter()
+        mLogActiveAdapter = LogActiveAdapter()
+        mLogActiveFooterAdapter = LogActiveFooterAdapter()
+
+        val adt = ConcatAdapter(
+            logActiveColumnAdapter,
+            mLogActiveAdapter,
+            mLogActiveFooterAdapter,
+        )
+
+        recyclerView.apply {
+            layoutManager = LinearLayoutManager(baseContext)
+            adapter = adt
+        }
 
         fetchLogActive()
 
@@ -34,8 +53,8 @@ class LogActiveActivity : BaseActivity() {
             progressBar.isVisible = false
             recyclerView.isVisible = true
 
-            recyclerView.submitList(LogActiveAdapter(), response.logActives)
-
+            mLogActiveAdapter.submitList(response.logActives)
+            mLogActiveFooterAdapter.setData(response)
         }
     }
 

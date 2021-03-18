@@ -16,7 +16,7 @@ interface MockyApi {
 //    @GET("v3/ee0eeb62-c018-4ca1-8ae9-44770e35e51a")
 //    suspend fun callFetchPlayer(): PlayerResponse
 
-    @GET("v3/455291f9-1990-4969-b807-85c78a174800")
+    @GET("v3/516adf03-c488-4c55-b19d-0e0e254014e9")
     suspend fun callFetchLogActive(): LogActiveResponse
 
 //    @GET("v3/112d2604-6123-4c22-b389-16aacba0a45f")

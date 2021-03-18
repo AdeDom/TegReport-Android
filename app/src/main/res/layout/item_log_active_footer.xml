@@ -6,23 +6,23 @@
     android:layout_marginBottom="300dp">
 
     <TextView
-        android:id="@+id/tvGrandTotalPeople"
+        android:id="@+id/tvPeopleAll"
         style="@style/Text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/tvGrandTotalScore"
+        app:layout_constraintEnd_toStartOf="@+id/tvGrandTotalTimePeriod"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvGrandTotalScore"
+        android:id="@+id/tvGrandTotalTimePeriod"
         style="@style/Text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvGrandTotalPeople"
+        app:layout_constraintStart_toEndOf="@+id/tvPeopleAll"
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
@@ -33,7 +33,7 @@
         android:background="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvGrandTotalScore" />
+        app:layout_constraintTop_toBottomOf="@+id/tvGrandTotalTimePeriod" />
 
     <View
         android:id="@+id/view2"

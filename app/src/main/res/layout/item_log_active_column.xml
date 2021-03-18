@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:columnCount="7"
+    android:rowCount="1">
+
+    <TextView
+        style="@style/Text"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:text="รหัสผู้เล่น"
+        android:textStyle="bold" />
+
+    <TextView
+        style="@style/Text"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:text="ชื่อผู้เล่น"
+        android:textStyle="bold" />
+
+    <TextView
+        style="@style/Text"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:text="วันที่เข้าเล่นเกม"
+        android:textStyle="bold" />
+
+    <TextView
+        style="@style/Text"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:text="เวลาที่เข้าเล่นเกม"
+        android:textStyle="bold" />
+
+    <TextView
+        style="@style/Text"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:singleLine="true"
+        android:text="วันที่ออกจากเกม"
+        android:textStyle="bold" />
+
+    <TextView
+        style="@style/Text"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:text="เวลาที่ออกจากเกม"
+        android:textStyle="bold" />
+
+    <TextView
+        style="@style/Text"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:singleLine="true"
+        android:text="ระยะเวลาในการเล่นเกม"
+        android:textStyle="bold" />
+
+</GridLayout>
