@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="200dp"
+    android:columnCount="3"
+    android:padding="8dp"
+    android:rowCount="7">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_columnSpan="3"
+        android:layout_margin="4dp"
+        android:background="@color/black" />
+
+    <TextView
+        style="@style/Text"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:text="จำนวนผู้เล่นทั้งหมด"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvPeopleAll"
+        style="@style/Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_columnSpan="2"
+        android:layout_gravity="end"
+        android:layout_margin="4dp"
+        android:text="3 คน" />
+
+    <TextView
+        style="@style/Text"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:text="เพศ"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvGenderMale"
+        style="@style/Text"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:layout_margin="4dp"
+        android:gravity="end"
+        android:text="ชาย 2 คน" />
+
+    <TextView
+        android:id="@+id/tvGenderFemale"
+        style="@style/Text"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:layout_margin="4dp"
+        android:gravity="end"
+        android:text="หญิง 1 คน" />
+
+    <TextView
+        style="@style/Text"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:text="สถานะผู้เล่นเกม"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvStateOnline"
+        style="@style/Text"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:layout_margin="4dp"
+        android:gravity="end"
+        android:text="ออนไลน์ 1 คน" />
+
+    <TextView
+        android:id="@+id/tvStateOffline"
+        style="@style/Text"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:layout_margin="4dp"
+        android:gravity="end"
+        android:text="ออฟไลน์ 2 คน" />
+
+    <TextView
+        style="@style/Text"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:text="โหมดผู้เล่นปัจจุบัน"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_columnSpan="2"
+        android:layout_columnWeight="1">
+
+        <TextView
+            android:id="@+id/tvModeMain"
+            style="@style/Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Main 3 คน" />
+
+        <TextView
+            android:id="@+id/tvModeSingle"
+            style="@style/Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Single 0 คน" />
+
+        <TextView
+            android:id="@+id/tvModeMulti"
+            style="@style/Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Multi 0 คน" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_columnSpan="3"
+        android:layout_margin="4dp"
+        android:background="@color/black" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_columnSpan="3"
+        android:layout_margin="4dp"
+        android:background="@color/black" />
+
+</GridLayout>

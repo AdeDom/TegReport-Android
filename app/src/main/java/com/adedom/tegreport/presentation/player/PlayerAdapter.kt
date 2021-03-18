@@ -1,9 +1,9 @@
 package com.adedom.tegreport.presentation.player
 
 import android.view.View
+import com.adedom.teg.models.report.GamePlayerRanking
 import com.adedom.teg.util.TegConstant
 import com.adedom.tegreport.R
-import com.adedom.tegreport.models.GamePlayerRanking
 import com.adedom.tegreport.utils.SimpleRecyclerView
 import com.adedom.tegreport.utils.loadCircle
 import kotlinx.android.synthetic.main.item_player.view.*

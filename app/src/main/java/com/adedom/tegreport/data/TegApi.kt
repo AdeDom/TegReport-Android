@@ -40,6 +40,12 @@ interface TegApi {
     @GET("api/report/single-item")
     suspend fun callFetchSingleItem(): SingleItemResponse
 
+    @GET("api/report/game-player-rankings/level")
+    suspend fun callFetchGamePlayerRankings(
+        @Query("begin") begin: Int?,
+        @Query("end") end: Int?,
+    ): GamePlayerRankingsResponse
+
     @GET("api/report/test-final/pantip")
     suspend fun callFetchTestFinalPantip(
         @Query("begin") begin: Long?,
