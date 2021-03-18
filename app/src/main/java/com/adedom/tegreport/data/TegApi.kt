@@ -42,8 +42,8 @@ interface TegApi {
 
     @GET("api/report/game-player-rankings/level")
     suspend fun callFetchGamePlayerRankings(
-        @Query("begin") begin: Int?,
-        @Query("end") end: Int?,
+        @Query("begin") begin: Int? = 1,
+        @Query("end") end: Int? = 99,
     ): GamePlayerRankingsResponse
 
     @GET("api/report/test-final/pantip")
