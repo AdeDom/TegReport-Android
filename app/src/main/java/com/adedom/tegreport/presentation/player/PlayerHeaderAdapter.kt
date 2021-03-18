@@ -13,9 +13,14 @@ class PlayerHeaderAdapter : ItemRecyclerView<Unit>() {
 
     override fun View.onBindViewHolder() {
         btSearch.setOnClickListener {
-            val begin = etBegin.text.toString().trim().toInt()
-            val end = etEnd.text.toString().trim().toInt()
-            listener?.invoke(Pair(begin, end))
+            val begin = etBegin.text.toString().trim()
+            val end = etEnd.text.toString().trim()
+
+            if (begin.isBlank() || end.isBlank()) {
+                return@setOnClickListener
+            }
+
+            listener?.invoke(Pair(begin.toInt(), end.toInt()))
         }
     }
 
