@@ -17,7 +17,7 @@
         <activity android:name=".presentation.singleitem.SingleItemActivity" />
         <activity android:name=".presentation.multicollection.MultiCollectionActivity" />
         <activity android:name=".presentation.itemcollection.ItemCollectionActivity" />
-        <activity android:name=".presentation.aboutroom.AboutRoomActivity" />
+        <activity android:name=".presentation.room.RoomActivity" />
         <activity android:name=".presentation.logactive.LogActiveActivity" />
         <activity android:name=".presentation.player.PlayerActivity" />
         <activity android:name=".presentation.testfinal.FinalActivity" />

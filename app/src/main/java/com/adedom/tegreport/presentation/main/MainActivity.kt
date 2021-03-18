@@ -4,12 +4,12 @@ import android.content.Intent
 import android.os.Bundle
 import com.adedom.tegreport.R
 import com.adedom.tegreport.base.BaseActivity
-import com.adedom.tegreport.presentation.aboutroom.AboutRoomActivity
 import com.adedom.tegreport.presentation.itemcollection.ItemCollectionActivity
 import com.adedom.tegreport.presentation.logactive.LogActiveActivity
 import com.adedom.tegreport.presentation.multicollection.MultiCollectionActivity
 import com.adedom.tegreport.presentation.multiitem.MultiItemActivity
 import com.adedom.tegreport.presentation.player.PlayerActivity
+import com.adedom.tegreport.presentation.room.RoomActivity
 import com.adedom.tegreport.presentation.singleitem.SingleItemActivity
 import com.adedom.tegreport.presentation.testfinal.FinalActivity
 import com.adedom.tegreport.utils.submitList
@@ -33,7 +33,7 @@ class MainActivity : BaseActivity() {
             val activityClass = when (it.first) {
                 1 -> PlayerActivity::class.java
                 2 -> LogActiveActivity::class.java
-                3 -> AboutRoomActivity::class.java
+                3 -> RoomActivity::class.java
                 4 -> ItemCollectionActivity::class.java
                 5 -> MultiCollectionActivity::class.java
                 6 -> SingleItemActivity::class.java

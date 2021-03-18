@@ -66,12 +66,12 @@ abstract class SimpleRecyclerView<T : Any> :
 
         init {
             itemView.setOnClickListener {
-                val entity = list[adapterPosition]
+                val entity = list[absoluteAdapterPosition]
                 onClick?.invoke(entity)
             }
 
             itemView.setOnLongClickListener {
-                val entity = list[adapterPosition]
+                val entity = list[absoluteAdapterPosition]
                 onLongClick?.invoke(entity)
                 true
             }
@@ -84,7 +84,7 @@ abstract class SimpleRecyclerView<T : Any> :
 abstract class ItemRecyclerView<T : Any> :
     RecyclerView.Adapter<ItemRecyclerView<T>.ItemViewHolder>() {
 
-     private var data: T? = null
+    private var data: T? = null
 
     override fun onCreateViewHolder(
         parent: ViewGroup,

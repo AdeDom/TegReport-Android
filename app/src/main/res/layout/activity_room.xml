@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.aboutroom.AboutRoomActivity">
+    tools:context=".presentation.room.RoomActivity">
 
     <include
         android:id="@+id/top"
@@ -18,12 +18,12 @@
         android:layout_height="0dp"
         android:clipToPadding="false"
         android:overScrollMode="never"
-        android:padding="8dp"
         android:paddingBottom="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/top" />
+        app:layout_constraintTop_toBottomOf="@+id/top"
+        tools:listitem="@layout/item_room" />
 
     <ProgressBar
         android:id="@+id/progressBar"
