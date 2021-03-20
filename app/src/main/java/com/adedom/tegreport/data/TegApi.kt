@@ -48,7 +48,10 @@ interface TegApi {
     ): GamePlayerRankingsResponse
 
     @GET("api/report/log-active-history/filter")
-    suspend fun callFetchLogActiveHistory(): LogActiveHistoryResponse
+    suspend fun callFetchLogActiveHistory(
+        @Query("dateTimeIn") dateTimeIn: Long?,
+        @Query("dateTimeOut") dateTimeOut: Long?,
+    ): LogActiveHistoryResponse
 
     @GET("api/report/test-final/pantip")
     suspend fun callFetchTestFinalPantip(

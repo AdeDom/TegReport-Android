@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.adedom.tegreport.R
 import com.adedom.tegreport.base.BaseActivity
 import com.adedom.tegreport.data.TegApi
+import com.google.android.material.datepicker.MaterialDatePicker
 import kotlinx.android.synthetic.main.activity_log_active.*
 import kotlinx.android.synthetic.main.toolbar.*
 import kotlinx.coroutines.launch
@@ -39,16 +40,25 @@ class LogActiveActivity : BaseActivity() {
             adapter = adt
         }
 
-        fetchLogActive()
+        fetchLogActive(null, null)
 
+        val dateRangePicker = MaterialDatePicker.Builder.dateRangePicker().build()
+
+        fab.setOnClickListener {
+            dateRangePicker.show(supportFragmentManager, null)
+        }
+
+        dateRangePicker.addOnPositiveButtonClickListener {
+            fetchLogActive(it.first, it.second?.plus(86_400_000)?.minus(1))
+        }
     }
 
-    private fun fetchLogActive() {
+    private fun fetchLogActive(dateTimeIn: Long?, dateTimeOut: Long?) {
         launch {
             progressBar.isVisible = true
             recyclerView.isVisible = false
 
-            val response = TegApi().callFetchLogActiveHistory()
+            val response = TegApi().callFetchLogActiveHistory(dateTimeIn, dateTimeOut)
 
             progressBar.isVisible = false
             recyclerView.isVisible = true
