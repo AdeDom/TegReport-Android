@@ -34,7 +34,7 @@ class FinalActivity : BaseActivity() {
         }
 
         dateRangePicker.addOnPositiveButtonClickListener {
-            fetchFinal(it.first, it.second)
+            fetchFinal(it.first, it.second?.plus(86_400_000)?.minus(1))
         }
 
         fetchFinal(null, null)
