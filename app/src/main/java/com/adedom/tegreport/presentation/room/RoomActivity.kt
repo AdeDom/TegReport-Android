@@ -6,7 +6,8 @@ import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.adedom.tegreport.R
 import com.adedom.tegreport.base.BaseActivity
-import com.adedom.tegreport.data.MockyApi
+import com.adedom.tegreport.data.TegApi
+import com.google.android.material.datepicker.MaterialDatePicker
 import kotlinx.android.synthetic.main.activity_room.*
 import kotlinx.android.synthetic.main.toolbar.*
 import kotlinx.coroutines.launch
@@ -39,21 +40,31 @@ class RoomActivity : BaseActivity() {
             adapter = adt
         }
 
-        fetchRooms()
+        fetchRooms(null, null)
+
+        val dateRangePicker = MaterialDatePicker.Builder.dateRangePicker().build()
+
+        fab.setOnClickListener {
+            dateRangePicker.show(supportFragmentManager, null)
+        }
+
+        dateRangePicker.addOnPositiveButtonClickListener {
+            fetchRooms(it.first, it.second?.plus(86_400_000)?.minus(1))
+        }
 
     }
 
-    private fun fetchRooms() {
+    private fun fetchRooms(begin: Long?, end: Long?) {
         launch {
             progressBar.isVisible = true
             recyclerView.isVisible = false
 
-            val response = MockyApi().callFetchRooms()
+            val response = TegApi().callFetchRoomHistory(begin, end)
 
             progressBar.isVisible = false
             recyclerView.isVisible = true
 
-            mRoomAdapter.submitList(response.rooms)
+            mRoomAdapter.submitList(response.roomHistories)
             mRoomFooterAdapter.setData(response)
         }
     }

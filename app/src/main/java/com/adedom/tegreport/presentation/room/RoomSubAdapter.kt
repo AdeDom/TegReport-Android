@@ -1,18 +1,18 @@
 package com.adedom.tegreport.presentation.room
 
 import android.view.View
+import com.adedom.teg.models.report.three.RoomInfoHistory
 import com.adedom.teg.util.TegConstant
 import com.adedom.tegreport.R
-import com.adedom.tegreport.models.RoomInfo
 import com.adedom.tegreport.utils.SimpleRecyclerView
 import kotlinx.android.synthetic.main.item_room_sub.view.*
 import java.util.*
 
-class RoomSubAdapter : SimpleRecyclerView<RoomInfo>() {
+class RoomSubAdapter : SimpleRecyclerView<RoomInfoHistory>() {
 
     override fun getLayout(): Int = R.layout.item_room_sub
 
-    override fun View.onBindViewHolder(currentData: RoomInfo, beforeData: RoomInfo?) {
+    override fun View.onBindViewHolder(currentData: RoomInfoHistory, beforeData: RoomInfoHistory?) {
         tvPlayerId.text = "- ${currentData.playerId}"
         tvName.text = currentData.name?.capitalize(Locale.getDefault())
         tvDateTime.text = currentData.dateTime
@@ -36,7 +36,7 @@ class RoomSubAdapter : SimpleRecyclerView<RoomInfo>() {
         }
     }
 
-    override fun getAreItemsTheSame(oldItem: RoomInfo, newItem: RoomInfo): Boolean {
+    override fun getAreItemsTheSame(oldItem: RoomInfoHistory, newItem: RoomInfoHistory): Boolean {
         return oldItem.infoId == newItem.infoId
     }
 

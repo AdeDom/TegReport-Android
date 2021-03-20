@@ -1,14 +1,12 @@
 package com.adedom.tegreport.data
 
 import com.adedom.tegreport.BuildConfig
-import com.adedom.tegreport.models.RoomResponse
 import com.facebook.stetho.okhttp3.StethoInterceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create
-import retrofit2.http.GET
 import java.util.concurrent.TimeUnit
 
 interface MockyApi {
@@ -19,8 +17,8 @@ interface MockyApi {
 //    @GET("v3/516adf03-c488-4c55-b19d-0e0e254014e9")
 //    suspend fun callFetchLogActive(): LogActiveHistoryResponse
 
-    @GET("v3/d9d720d8-befd-4211-9d07-50e6da6f8419")
-    suspend fun callFetchRooms(): RoomResponse
+//    @GET("v3/d9d720d8-befd-4211-9d07-50e6da6f8419")
+//    suspend fun callFetchRooms(): RoomHistoryResponse
 
 //    @GET("v3/112d2604-6123-4c22-b389-16aacba0a45f")
 //    suspend fun callFetchFinal(): FinalResponse

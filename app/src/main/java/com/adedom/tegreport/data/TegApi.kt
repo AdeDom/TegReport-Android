@@ -2,6 +2,7 @@ package com.adedom.tegreport.data
 
 import com.adedom.teg.models.report.*
 import com.adedom.teg.models.report.testfinal.FinalResponse
+import com.adedom.teg.models.report.three.RoomHistoryResponse
 import com.adedom.teg.models.report.two.LogActiveHistoryResponse
 import com.adedom.teg.util.TegConstant
 import com.adedom.tegreport.BuildConfig
@@ -52,6 +53,12 @@ interface TegApi {
         @Query("dateTimeIn") dateTimeIn: Long?,
         @Query("dateTimeOut") dateTimeOut: Long?,
     ): LogActiveHistoryResponse
+
+    @GET("api/report/room-history/filter")
+    suspend fun callFetchRoomHistory(
+        @Query("begin") begin: Long?,
+        @Query("end") end: Long?,
+    ): RoomHistoryResponse
 
     @GET("api/report/test-final/pantip")
     suspend fun callFetchTestFinalPantip(
