@@ -16,6 +16,7 @@ import kotlinx.coroutines.launch
 class LogActiveActivity : BaseActivity() {
 
     private lateinit var mDateHeaderAdapter: DateHeaderAdapter
+    private lateinit var mLogActiveColumnAdapter: LogActiveColumnAdapter
     private lateinit var mLogActiveAdapter: LogActiveAdapter
     private lateinit var mLogActiveFooterAdapter: LogActiveFooterAdapter
 
@@ -28,13 +29,13 @@ class LogActiveActivity : BaseActivity() {
         setSupportActionBar(toolbar)
 
         mDateHeaderAdapter = DateHeaderAdapter()
-        val logActiveColumnAdapter = LogActiveColumnAdapter()
+        mLogActiveColumnAdapter = LogActiveColumnAdapter()
         mLogActiveAdapter = LogActiveAdapter()
         mLogActiveFooterAdapter = LogActiveFooterAdapter()
 
         val adt = ConcatAdapter(
             mDateHeaderAdapter,
-            logActiveColumnAdapter,
+            mLogActiveColumnAdapter,
             mLogActiveAdapter,
             mLogActiveFooterAdapter,
         )
@@ -67,9 +68,10 @@ class LogActiveActivity : BaseActivity() {
             progressBar.isVisible = false
             recyclerView.isVisible = true
 
-            mDateHeaderAdapter.setData(Pair(dateTimeIn, dateTimeOut))
+            mDateHeaderAdapter.submitData(Pair(dateTimeIn, dateTimeOut))
+            mLogActiveColumnAdapter.submitData(Unit)
             mLogActiveAdapter.submitList(response.logActiveHistories)
-            mLogActiveFooterAdapter.setData(response)
+            mLogActiveFooterAdapter.submitData(response)
         }
     }
 

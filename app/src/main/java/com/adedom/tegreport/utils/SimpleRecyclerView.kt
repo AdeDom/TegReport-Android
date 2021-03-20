@@ -81,35 +81,42 @@ abstract class SimpleRecyclerView<T : Any> :
 
 }
 
-abstract class ItemRecyclerView<T : Any> :
-    RecyclerView.Adapter<ItemRecyclerView<T>.ItemViewHolder>() {
+abstract class SingleRecyclerView<T : Any> :
+    RecyclerView.Adapter<SingleRecyclerView<T>.ItemViewHolder>() {
 
-    private var data: T? = null
+    private val asyncListDiffer = AsyncListDiffer(this, object : DiffUtil.ItemCallback<T>() {
+        override fun areItemsTheSame(oldItem: T, newItem: T): Boolean {
+            return oldItem == newItem
+        }
+
+        override fun areContentsTheSame(oldItem: T, newItem: T): Boolean {
+            return oldItem == newItem
+        }
+    })
+
+    private val list: MutableList<T?>
+        get() = asyncListDiffer.currentList
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): ItemRecyclerView<T>.ItemViewHolder {
+    ): SingleRecyclerView<T>.ItemViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(getLayout(), parent, false)
         return ItemViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
-        holder.itemView.onBindViewHolder()
+        holder.itemView.onBindViewHolder(list[position])
     }
 
-    override fun getItemCount(): Int = 1
+    override fun getItemCount(): Int = list.size
 
     @LayoutRes
     abstract fun getLayout(): Int
 
-    abstract fun View.onBindViewHolder()
+    abstract fun View.onBindViewHolder(data: T?)
 
-    fun setData(data: T) {
-        this.data = data
-    }
-
-    fun getData() = data
+    fun submitData(data: T) = asyncListDiffer.submitList(listOf(data))
 
     inner class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 

@@ -70,9 +70,9 @@ class FinalActivity : BaseActivity() {
                 adapter = adt
             }
 
-            dateHeadAdapter.setData(kotlin.Pair(begin, end))
+            dateHeadAdapter.submitData(kotlin.Pair(begin, end))
             finalAdapter.submitList(response.finals)
-            resultFooterAdapter.setData(
+            resultFooterAdapter.submitData(
                 kotlin.Pair(response.grandTotalPeople, response.grandTotalScore)
             )
 

@@ -59,7 +59,7 @@ class PlayerActivity : BaseActivity() {
             recyclerView.isVisible = true
 
             mPlayerAdapter.submitList(response.gamePlayerRankings)
-            mPlayerFooterAdapter.setData(response)
+            mPlayerFooterAdapter.submitData(response)
         }
     }
 

@@ -16,6 +16,7 @@ import kotlinx.coroutines.launch
 class RoomActivity : BaseActivity() {
 
     private lateinit var mDateHeaderAdapter: DateHeaderAdapter
+    private lateinit var mRoomColumnAdapter: RoomColumnAdapter
     private lateinit var mRoomAdapter: RoomAdapter
     private lateinit var mRoomFooterAdapter: RoomFooterAdapter
 
@@ -28,13 +29,13 @@ class RoomActivity : BaseActivity() {
         setSupportActionBar(toolbar)
 
         mDateHeaderAdapter = DateHeaderAdapter()
-        val roomColumnAdapter = RoomColumnAdapter()
+        mRoomColumnAdapter = RoomColumnAdapter()
         mRoomAdapter = RoomAdapter()
         mRoomFooterAdapter = RoomFooterAdapter()
 
         val adt = ConcatAdapter(
             mDateHeaderAdapter,
-            roomColumnAdapter,
+            mRoomColumnAdapter,
             mRoomAdapter,
             mRoomFooterAdapter,
         )
@@ -68,9 +69,10 @@ class RoomActivity : BaseActivity() {
             progressBar.isVisible = false
             recyclerView.isVisible = true
 
-            mDateHeaderAdapter.setData(Pair(begin, end))
+            mDateHeaderAdapter.submitData(Pair(begin, end))
+            mRoomColumnAdapter.submitData(Unit)
             mRoomAdapter.submitList(response.roomHistories)
-            mRoomFooterAdapter.setData(response)
+            mRoomFooterAdapter.submitData(response)
         }
     }
 
