@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.adedom.tegreport.R
 import com.adedom.tegreport.base.BaseActivity
 import com.adedom.tegreport.data.TegApi
+import com.adedom.tegreport.presentation.dateheader.DateHeaderAdapter
 import com.google.android.material.datepicker.MaterialDatePicker
 import kotlinx.android.synthetic.main.activity_log_active.*
 import kotlinx.android.synthetic.main.toolbar.*
@@ -14,6 +15,7 @@ import kotlinx.coroutines.launch
 
 class LogActiveActivity : BaseActivity() {
 
+    private lateinit var mDateHeaderAdapter: DateHeaderAdapter
     private lateinit var mLogActiveAdapter: LogActiveAdapter
     private lateinit var mLogActiveFooterAdapter: LogActiveFooterAdapter
 
@@ -25,11 +27,13 @@ class LogActiveActivity : BaseActivity() {
         toolbar.title = title
         setSupportActionBar(toolbar)
 
+        mDateHeaderAdapter = DateHeaderAdapter()
         val logActiveColumnAdapter = LogActiveColumnAdapter()
         mLogActiveAdapter = LogActiveAdapter()
         mLogActiveFooterAdapter = LogActiveFooterAdapter()
 
         val adt = ConcatAdapter(
+            mDateHeaderAdapter,
             logActiveColumnAdapter,
             mLogActiveAdapter,
             mLogActiveFooterAdapter,
@@ -63,6 +67,7 @@ class LogActiveActivity : BaseActivity() {
             progressBar.isVisible = false
             recyclerView.isVisible = true
 
+            mDateHeaderAdapter.setData(Pair(dateTimeIn, dateTimeOut))
             mLogActiveAdapter.submitList(response.logActiveHistories)
             mLogActiveFooterAdapter.setData(response)
         }
