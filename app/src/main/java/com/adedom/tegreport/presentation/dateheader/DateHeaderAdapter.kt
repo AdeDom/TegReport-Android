@@ -1,5 +1,6 @@
-package com.adedom.tegreport.presentation.testfinal
+package com.adedom.tegreport.presentation.dateheader
 
+import android.util.Log
 import android.view.View
 import com.adedom.tegreport.R
 import com.adedom.tegreport.utils.ItemRecyclerView
@@ -12,13 +13,20 @@ class DateHeaderAdapter : ItemRecyclerView<Pair<Long?, Long?>>() {
     override fun getLayout(): Int = R.layout.item_date_header
 
     override fun View.onBindViewHolder() {
+        val item = getData()
+        Log.d(TAG, "onBindViewHolder: ${item?.first}, ${item?.second}")
+
         val sdf = SimpleDateFormat("d/M/yy", Locale.getDefault())
-        if (getData()?.first == null && getData()?.second == null) {
+        if (item?.first == null && item?.second == null) {
             tvDateBeginAndEnd.text = "ตั้งแต่วันที่ - ถึงวันที่ - "
         } else {
             tvDateBeginAndEnd.text =
-                "ตั้งแต่วันที่ ${sdf.format(getData()?.first)} ถึงวันที่ ${sdf.format(getData()?.second)}"
+                "ตั้งแต่วันที่ ${sdf.format(item?.first)} ถึงวันที่ ${sdf.format(item?.second)}"
         }
+    }
+
+    companion object {
+        private const val TAG = "DateHeaderAdapter"
     }
 
 }

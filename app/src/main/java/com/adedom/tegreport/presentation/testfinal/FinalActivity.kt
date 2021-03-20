@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.adedom.tegreport.R
 import com.adedom.tegreport.base.BaseActivity
 import com.adedom.tegreport.data.TegApi
+import com.adedom.tegreport.presentation.dateheader.DateHeaderAdapter
 import com.google.android.material.datepicker.MaterialDatePicker
 import kotlinx.android.synthetic.main.activity_final.*
 import kotlinx.android.synthetic.main.toolbar.*

@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.adedom.tegreport.R
 import com.adedom.tegreport.base.BaseActivity
 import com.adedom.tegreport.data.TegApi
+import com.adedom.tegreport.presentation.dateheader.DateHeaderAdapter
 import com.google.android.material.datepicker.MaterialDatePicker
 import kotlinx.android.synthetic.main.activity_room.*
 import kotlinx.android.synthetic.main.toolbar.*
@@ -14,6 +15,7 @@ import kotlinx.coroutines.launch
 
 class RoomActivity : BaseActivity() {
 
+    private lateinit var mDateHeaderAdapter: DateHeaderAdapter
     private lateinit var mRoomAdapter: RoomAdapter
     private lateinit var mRoomFooterAdapter: RoomFooterAdapter
 
@@ -25,11 +27,13 @@ class RoomActivity : BaseActivity() {
         toolbar.title = title
         setSupportActionBar(toolbar)
 
+        mDateHeaderAdapter = DateHeaderAdapter()
         val roomColumnAdapter = RoomColumnAdapter()
         mRoomAdapter = RoomAdapter()
         mRoomFooterAdapter = RoomFooterAdapter()
 
         val adt = ConcatAdapter(
+            mDateHeaderAdapter,
             roomColumnAdapter,
             mRoomAdapter,
             mRoomFooterAdapter,
@@ -64,6 +68,7 @@ class RoomActivity : BaseActivity() {
             progressBar.isVisible = false
             recyclerView.isVisible = true
 
+            mDateHeaderAdapter.setData(Pair(begin, end))
             mRoomAdapter.submitList(response.roomHistories)
             mRoomFooterAdapter.setData(response)
         }
