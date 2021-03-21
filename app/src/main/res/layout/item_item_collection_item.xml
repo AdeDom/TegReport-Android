@@ -1,47 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:columnCount="4"
+    android:rowCount="1">
+
+    <RelativeLayout
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1">
+
+        <ImageView
+            android:id="@+id/ivItemId"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_egg" />
+
+    </RelativeLayout>
 
     <TextView
-        android:id="@+id/tvItemType"
+        android:id="@+id/tvQty"
         style="@style/Text"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:text="Item type"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:overScrollMode="never"
-        app:layout_constraintBottom_toTopOf="@+id/tvItemQty"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvItemType"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_columnWeight="1"
+        android:gravity="center"
+        android:text="Qty" />
 
     <TextView
-        android:id="@+id/tvCollectionAll"
+        android:id="@+id/tvDate"
         style="@style/Text"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="50dp"
-        android:text="Collection all"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/tvItemQty" />
+        android:layout_columnWeight="1"
+        android:gravity="center"
+        android:text="Date" />
 
     <TextView
-        android:id="@+id/tvItemQty"
+        android:id="@+id/tvTime"
         style="@style/Text"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:text="Item qty"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:layout_columnWeight="1"
+        android:gravity="center"
+        android:text="Time" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</GridLayout>

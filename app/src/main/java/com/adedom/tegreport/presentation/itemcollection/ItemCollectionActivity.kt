@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.adedom.tegreport.R
 import com.adedom.tegreport.base.BaseActivity
-import com.adedom.tegreport.data.MockyApi
+import com.adedom.tegreport.data.TegApi
 import kotlinx.android.synthetic.main.activity_item_collection.*
 import kotlinx.android.synthetic.main.toolbar.*
 import kotlinx.coroutines.launch
@@ -14,6 +14,7 @@ import kotlinx.coroutines.launch
 class ItemCollectionActivity : BaseActivity() {
 
     private lateinit var mItemCollectionPlayerAdapter: ItemCollectionPlayerAdapter
+    private lateinit var mItemCollectionFooterAdapter: ItemCollectionFooterAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,9 +25,11 @@ class ItemCollectionActivity : BaseActivity() {
         setSupportActionBar(toolbar)
 
         mItemCollectionPlayerAdapter = ItemCollectionPlayerAdapter()
+        mItemCollectionFooterAdapter = ItemCollectionFooterAdapter()
 
         val adt = ConcatAdapter(
             mItemCollectionPlayerAdapter,
+            mItemCollectionFooterAdapter,
         )
 
         recyclerView.apply {
@@ -42,13 +45,13 @@ class ItemCollectionActivity : BaseActivity() {
             progressBar.isVisible = true
             recyclerView.isVisible = false
 
-            val response = MockyApi().callFetchItemCollection()
+            val response = TegApi().callFetchItemCollectionHistory()
 
             progressBar.isVisible = false
             recyclerView.isVisible = true
 
-            mItemCollectionPlayerAdapter.submitList(response.players)
-
+            mItemCollectionPlayerAdapter.submitList(response.itemCollectionPlayers)
+            mItemCollectionFooterAdapter.submitData(response)
         }
     }
 

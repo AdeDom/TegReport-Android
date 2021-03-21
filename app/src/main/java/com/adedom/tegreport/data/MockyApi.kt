@@ -22,8 +22,8 @@ interface MockyApi {
 //    @GET("v3/d9d720d8-befd-4211-9d07-50e6da6f8419")
 //    suspend fun callFetchRooms(): RoomHistoryResponse
 
-    @GET("v3/9cccc9ae-9f17-4ffc-86af-05cff7579712")
-    suspend fun callFetchItemCollection(): ItemCollectionHistoryResponse
+//    @GET("v3/b90833e7-224a-4bf8-af7c-d436b6e21832")
+//    suspend fun callFetchItemCollection(): ItemCollectionHistoryResponse
 
 //    @GET("v3/112d2604-6123-4c22-b389-16aacba0a45f")
 //    suspend fun callFetchFinal(): FinalResponse

@@ -9,6 +9,7 @@
         style="@style/Text"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
+        android:singleLine="true"
         android:text="PlayerId"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -37,6 +38,7 @@
         style="@style/Text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="50dp"
         android:text="Mode all"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -6,6 +6,7 @@ import com.adedom.teg.models.report.three.RoomHistoryResponse
 import com.adedom.teg.models.report.two.LogActiveHistoryResponse
 import com.adedom.teg.util.TegConstant
 import com.adedom.tegreport.BuildConfig
+import com.adedom.tegreport.models.ItemCollectionHistoryResponse
 import com.facebook.stetho.okhttp3.StethoInterceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -59,6 +60,9 @@ interface TegApi {
         @Query("begin") begin: Long?,
         @Query("end") end: Long?,
     ): RoomHistoryResponse
+
+    @GET("api/report/item-collection-history")
+    suspend fun callFetchItemCollectionHistory(): ItemCollectionHistoryResponse
 
     @GET("api/report/test-final/pantip")
     suspend fun callFetchTestFinalPantip(
