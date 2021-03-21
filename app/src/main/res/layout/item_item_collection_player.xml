@@ -7,8 +7,9 @@
     <TextView
         android:id="@+id/tvPlayerId"
         style="@style/Text"
-        android:layout_width="100dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:singleLine="true"
         android:text="PlayerId"
         app:layout_constraintStart_toStartOf="parent"
@@ -17,8 +18,9 @@
     <TextView
         android:id="@+id/tvName"
         style="@style/Text"
-        android:layout_width="100dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:text="Name"
         app:layout_constraintStart_toEndOf="@+id/tvPlayerId"
         app:layout_constraintTop_toTopOf="parent" />

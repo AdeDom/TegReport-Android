@@ -1,8 +1,8 @@
 package com.adedom.tegreport.presentation.itemcollection
 
 import android.view.View
+import com.adedom.teg.models.report.four.ItemCollectionItem
 import com.adedom.tegreport.R
-import com.adedom.tegreport.models.ItemCollectionItem
 import com.adedom.tegreport.utils.SimpleRecyclerView
 import kotlinx.android.synthetic.main.item_item_collection_item.view.*
 
