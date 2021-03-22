@@ -71,6 +71,7 @@ class FinalActivity : BaseActivity() {
             }
 
             dateHeadAdapter.submitData(kotlin.Pair(begin, end))
+            columnHeaderAdapter.submitData(Unit)
             finalAdapter.submitList(response.finals)
             resultFooterAdapter.submitData(
                 kotlin.Pair(response.grandTotalPeople, response.grandTotalScore)
