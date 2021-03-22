@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:columnCount="6"
+    android:rowCount="1">
+
+    <TextView
+        style="@style/Text"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:text="วันที่"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        style="@style/Text"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:text="เวลา"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        style="@style/Text"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:text="หมายเลขห้อง"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        style="@style/Text"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:text="รหัสผู้เล่น"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        style="@style/Text"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:text="ชื่อผู้เล่น"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        style="@style/Text"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:text="ทีม"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+</GridLayout>
