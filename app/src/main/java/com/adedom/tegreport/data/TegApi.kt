@@ -1,6 +1,7 @@
 package com.adedom.tegreport.data
 
 import com.adedom.teg.models.report.*
+import com.adedom.teg.models.report.five.MultiCollectionHistoryResponse
 import com.adedom.teg.models.report.four.ItemCollectionHistoryResponse
 import com.adedom.teg.models.report.testfinal.FinalResponse
 import com.adedom.teg.models.report.three.RoomHistoryResponse
@@ -66,6 +67,12 @@ interface TegApi {
         @Query("begin") begin: Long?,
         @Query("end") end: Long?,
     ): ItemCollectionHistoryResponse
+
+    @GET("api/report/multi-collection-history/filter")
+    suspend fun callFetchMultiCollectionHistory(
+        @Query("begin") begin: Long?,
+        @Query("end") end: Long?,
+    ): MultiCollectionHistoryResponse
 
     @GET("api/report/test-final/pantip")
     suspend fun callFetchTestFinalPantip(

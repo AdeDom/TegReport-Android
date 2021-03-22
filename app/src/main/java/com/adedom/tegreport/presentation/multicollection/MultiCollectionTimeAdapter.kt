@@ -1,9 +1,9 @@
 package com.adedom.tegreport.presentation.multicollection
 
 import android.view.View
+import com.adedom.teg.models.report.five.MultiCollectionTime
 import com.adedom.teg.util.TegConstant
 import com.adedom.tegreport.R
-import com.adedom.tegreport.models.MultiCollectionTime
 import com.adedom.tegreport.utils.SimpleRecyclerView
 import kotlinx.android.synthetic.main.item_multi_collection_time.view.*
 
@@ -15,10 +15,6 @@ class MultiCollectionTimeAdapter : SimpleRecyclerView<MultiCollectionTime>() {
         currentData: MultiCollectionTime,
         beforeData: MultiCollectionTime?
     ) {
-        if (currentData.time == beforeData?.time) {
-            tvTime.visibility = View.INVISIBLE
-        }
-
         if (currentData.roomNo == beforeData?.roomNo) {
             tvRoomNo.visibility = View.INVISIBLE
         }

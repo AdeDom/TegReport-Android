@@ -1,8 +1,8 @@
 package com.adedom.tegreport.presentation.multicollection
 
 import android.view.View
+import com.adedom.teg.models.report.five.MultiCollectionDate
 import com.adedom.tegreport.R
-import com.adedom.tegreport.models.MultiCollectionDate
 import com.adedom.tegreport.utils.SimpleRecyclerView
 import com.adedom.tegreport.utils.submitList
 import kotlinx.android.synthetic.main.item_multi_collection_date.view.*

@@ -1,19 +1,21 @@
 package com.adedom.tegreport.presentation.multicollection
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.adedom.tegreport.R
 import com.adedom.tegreport.base.BaseActivity
-import com.adedom.tegreport.data.MockyApi
+import com.adedom.tegreport.data.TegApi
+import com.adedom.tegreport.presentation.dateheader.DateHeaderAdapter
+import com.google.android.material.datepicker.MaterialDatePicker
 import kotlinx.android.synthetic.main.activity_multi_collection.*
 import kotlinx.android.synthetic.main.toolbar.*
 import kotlinx.coroutines.launch
 
 class MultiCollectionActivity : BaseActivity() {
 
+    private lateinit var mDateHeaderAdapter: DateHeaderAdapter
     private lateinit var mMultiCollectionColumnAdapter: MultiCollectionColumnAdapter
     private lateinit var mMultiCollectionDateAdapter: MultiCollectionDateAdapter
     private lateinit var mMultiCollectionFooterAdapter: MultiCollectionFooterAdapter
@@ -26,6 +28,7 @@ class MultiCollectionActivity : BaseActivity() {
         toolbar.title = title
         setSupportActionBar(toolbar)
 
+        mDateHeaderAdapter = DateHeaderAdapter()
         mMultiCollectionColumnAdapter = MultiCollectionColumnAdapter()
         mMultiCollectionDateAdapter = MultiCollectionDateAdapter()
         mMultiCollectionFooterAdapter = MultiCollectionFooterAdapter()
@@ -41,28 +44,34 @@ class MultiCollectionActivity : BaseActivity() {
             adapter = adt
         }
 
-        fetchMultiCollection()
+        fetchMultiCollection(null, null)
+
+        val dateRangePicker = MaterialDatePicker.Builder.dateRangePicker().build()
+
+        fab.setOnClickListener {
+            dateRangePicker.show(supportFragmentManager, null)
+        }
+
+        dateRangePicker.addOnPositiveButtonClickListener {
+            fetchMultiCollection(it.first, it.second?.plus(86_400_000)?.minus(1))
+        }
     }
 
-    private fun fetchMultiCollection() {
+    private fun fetchMultiCollection(begin: Long?, end: Long?) {
         launch {
             progressBar.visibility = View.VISIBLE
             recyclerView.visibility = View.INVISIBLE
 
-            val response = MockyApi().callFetchMultiCollection()
-            Log.d(TAG, "fetchMultiCollection: $response")
+            val response = TegApi().callFetchMultiCollectionHistory(begin, end)
 
             progressBar.visibility = View.INVISIBLE
             recyclerView.visibility = View.VISIBLE
 
+            mDateHeaderAdapter.submitData(Pair(begin, end))
             mMultiCollectionColumnAdapter.submitData(Unit)
             mMultiCollectionDateAdapter.submitList(response.multiCollectionDates)
             mMultiCollectionFooterAdapter.submitData(response)
         }
-    }
-
-    companion object {
-        private const val TAG = "MultiCollectionActivity"
     }
 
 }

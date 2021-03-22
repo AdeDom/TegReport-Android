@@ -50,7 +50,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
     // library teg server
-    implementation "com.github.AdeDom:TheEggGame-Server:0.4.2"
+    implementation "com.github.AdeDom:TheEggGame-Server:0.4.3"
 
     // retrofit & logging
     def retrofit2 = "2.9.0"

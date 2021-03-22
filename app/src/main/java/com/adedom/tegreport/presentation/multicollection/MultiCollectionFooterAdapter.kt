@@ -1,8 +1,8 @@
 package com.adedom.tegreport.presentation.multicollection
 
 import android.view.View
+import com.adedom.teg.models.report.five.MultiCollectionHistoryResponse
 import com.adedom.tegreport.R
-import com.adedom.tegreport.models.MultiCollectionHistoryResponse
 import com.adedom.tegreport.utils.SingleRecyclerView
 import kotlinx.android.synthetic.main.item_multi_collection_footer.view.*
 
