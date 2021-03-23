@@ -1,12 +1,14 @@
 package com.adedom.tegreport.data
 
 import com.adedom.tegreport.BuildConfig
+import com.adedom.tegreport.models.SingleItemHistoryResponse
 import com.facebook.stetho.okhttp3.StethoInterceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create
+import retrofit2.http.GET
 import java.util.concurrent.TimeUnit
 
 interface MockyApi {
@@ -25,6 +27,9 @@ interface MockyApi {
 
 //    @GET("v3/d6751843-1810-42f0-a735-57c4761cf5dd")
 //    suspend fun callFetchMultiCollection(): MultiCollectionHistoryResponse
+
+    @GET("v3/cbe08d5f-9aeb-4e9e-aedc-8f97d25cbc4c")
+    suspend fun callFetchSingleItemHistory(): SingleItemHistoryResponse
 
 //    @GET("v3/112d2604-6123-4c22-b389-16aacba0a45f")
 //    suspend fun callFetchFinal(): FinalResponse
