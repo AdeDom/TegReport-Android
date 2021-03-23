@@ -1,10 +1,10 @@
 package com.adedom.tegreport.presentation.singleitem
 
 import android.view.View
+import com.adedom.teg.models.report.six.SingleItemDate
+import com.adedom.teg.models.report.six.SingleItemTime
 import com.adedom.teg.util.TegConstant
 import com.adedom.tegreport.R
-import com.adedom.tegreport.models.SingleItemDate
-import com.adedom.tegreport.models.SingleItemTime
 import com.adedom.tegreport.utils.SimpleExpandableListAdapter
 import kotlinx.android.synthetic.main.item_single_item_detail.view.*
 import kotlinx.android.synthetic.main.item_single_item_main.view.*
