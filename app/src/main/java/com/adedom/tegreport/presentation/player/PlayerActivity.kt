@@ -13,6 +13,8 @@ import kotlinx.coroutines.launch
 
 class PlayerActivity : BaseActivity() {
 
+    private lateinit var mPlayerHeaderAdapter: PlayerHeaderAdapter
+    private lateinit var mPlayerColumnAdapter: PlayerColumnAdapter
     private lateinit var mPlayerAdapter: PlayerAdapter
     private lateinit var mPlayerFooterAdapter: PlayerFooterAdapter
 
@@ -24,14 +26,14 @@ class PlayerActivity : BaseActivity() {
         toolbar.title = title
         setSupportActionBar(toolbar)
 
-        val playerHeaderAdapter = PlayerHeaderAdapter()
-        val playerColumnAdapter = PlayerColumnAdapter()
+        mPlayerHeaderAdapter = PlayerHeaderAdapter()
+        mPlayerColumnAdapter = PlayerColumnAdapter()
         mPlayerAdapter = PlayerAdapter()
         mPlayerFooterAdapter = PlayerFooterAdapter()
 
         val adt = ConcatAdapter(
-            playerHeaderAdapter,
-            playerColumnAdapter,
+            mPlayerHeaderAdapter,
+            mPlayerColumnAdapter,
             mPlayerAdapter,
             mPlayerFooterAdapter,
         )
@@ -43,7 +45,7 @@ class PlayerActivity : BaseActivity() {
 
         fetchPlayer(null, null)
 
-        playerHeaderAdapter.setOnClickListener {
+        mPlayerHeaderAdapter.setOnClickListener {
             fetchPlayer(it.first, it.second)
         }
     }
@@ -58,6 +60,8 @@ class PlayerActivity : BaseActivity() {
             progressBar.isVisible = false
             recyclerView.isVisible = true
 
+            mPlayerHeaderAdapter.submitData(Unit)
+            mPlayerColumnAdapter.submitData(Unit)
             mPlayerAdapter.submitList(response.gamePlayerRankings)
             mPlayerFooterAdapter.submitData(response)
         }

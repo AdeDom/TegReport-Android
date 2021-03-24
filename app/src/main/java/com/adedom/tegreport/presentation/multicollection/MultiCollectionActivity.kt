@@ -34,6 +34,7 @@ class MultiCollectionActivity : BaseActivity() {
         mMultiCollectionFooterAdapter = MultiCollectionFooterAdapter()
 
         val adt = ConcatAdapter(
+            mDateHeaderAdapter,
             mMultiCollectionColumnAdapter,
             mMultiCollectionDateAdapter,
             mMultiCollectionFooterAdapter,
