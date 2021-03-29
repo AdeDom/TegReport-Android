@@ -7,7 +7,6 @@ import com.adedom.teg.models.report.six.SingleItemHistoryResponse
 import com.adedom.teg.models.report.testfinal.FinalResponse
 import com.adedom.teg.models.report.three.RoomHistoryResponse
 import com.adedom.teg.models.report.two.LogActiveHistoryResponse
-import com.adedom.teg.util.TegConstant
 import com.adedom.tegreport.BuildConfig
 import com.facebook.stetho.okhttp3.StethoInterceptor
 import okhttp3.OkHttpClient
@@ -88,6 +87,10 @@ interface TegApi {
     ): FinalResponse
 
     companion object {
+
+        private const val HOST_NAME = ""
+        private const val BASE_URL = "http://$HOST_NAME:8080/"
+
         operator fun invoke(): TegApi {
             val okHttpClient = OkHttpClient.Builder().apply {
                 if (BuildConfig.DEBUG) {
@@ -106,7 +109,7 @@ interface TegApi {
             val retrofit = Retrofit.Builder().apply {
                 client(okHttpClient)
                 addConverterFactory(GsonConverterFactory.create())
-                baseUrl(TegConstant.BASE_URL)
+                baseUrl(BASE_URL)
             }.build()
 
             return retrofit.create()

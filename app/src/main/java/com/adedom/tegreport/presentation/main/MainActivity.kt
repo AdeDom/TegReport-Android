@@ -36,7 +36,7 @@ class MainActivity : BaseActivity() {
                 4 -> ItemCollectionActivity::class.java
                 5 -> MultiCollectionActivity::class.java
                 6 -> SingleItemActivity::class.java
-                8 -> FinalActivity::class.java
+                7 -> FinalActivity::class.java
                 else -> null
             }
 
@@ -54,8 +54,8 @@ class MainActivity : BaseActivity() {
             Pair(3, "รายงานห้องของผู้เล่นเกมแบบเป็นทีม"),
             Pair(4, "รายงานการเก็บไอเท็มของผู้เล่นเกมทั้งหมด"),
             Pair(5, "รายงานการเก็บไอเท็มของผู้เล่นเกมแบบเป็นทีม"),
-//            Pair(6, "รายงานไอเท็มที่แสดงของผู้เล่นเกมแบบคนเดียว"),
-//            Pair(8, "ทดลองออกรายงาน"),
+            Pair(6, "รายงานไอเท็มที่แสดงของผู้เล่นเกมแบบคนเดียว"),
+            Pair(7, "ทดลองออกรายงาน"),
         )
     }
 
