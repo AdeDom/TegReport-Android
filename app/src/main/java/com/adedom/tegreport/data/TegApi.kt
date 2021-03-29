@@ -18,6 +18,9 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 import java.util.concurrent.TimeUnit
 
+/**
+ * pathiphondev@gmail.com
+ */
 interface TegApi {
 
     @GET("api/report/item-collection")
@@ -86,6 +89,7 @@ interface TegApi {
         @Query("end") end: Long?,
     ): FinalResponse
 
+    // HOST_NAME -> open terminal [ipconfig] using => IPv4 Address
     companion object {
 
         private const val HOST_NAME = ""
